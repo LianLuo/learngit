@@ -1,0 +1,58 @@
+1. -- 查看GIT中的全局账号和邮件
+git config --global user.name
+git config --global user.email
+
+2. -- 如果是window用户，默认首次打开Git是在C盘下面，如果我们需要切换到其他盘符，可以用
+cd /E/
+pwd
+ls
+ls -ah  --显示. 和.. 的目录
+
+3. -- 添加一个文件到git本地仓库中
+git add readme.txt
+git add <file>
+
+4. -- 提交到本地
+git commit -m "wrote a readme file" -- -m 后面输入的是本次提交的文件说明，任何字符都行，最好是有意义的。
+git commit -m <message>
+
+5. --git status命令可以让我们时刻掌握仓库的当前状态。
+git status
+
+6. -- 查看git中具体某个文件修改了什么
+git diff readme.txt
+
+7. 提交修改和提交新文件一样，需要两步，一步是add一步是commit
+git add readme.txt
+git commit -m "commit message".
+
+8. 查询所有提交记录
+git log --pretty=oneline
+
+9. git 中用HEAD表示当前版本，上一个版本用HEAD^，上上一个版本用HEAD^^
+
+10.回退到上一个版本
+git reset --hard HEAD^
+
+我们回到具体版本中，需要用commit id进行处理，如果我们使用了git reset --hard HEAD^,并且关闭了 git 窗体，如果可以恢复到下一个版本呢？
+我们需要使用的是git relog,这个命令记录了我们的每次输入的命令。通过命令我们又可以找到commit id了
+git reset --hard commit_id
+
+-- 撤销修改 最后一次commit的状态
+git checkout -- <file>
+
+git reset HEAD <file>
+
+-- 删除文件
+
+git rm readme.txt
+
+git commit -m 'remove readme.txt'
+
+-- git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。
+-- 如果因为误删除了这个文件我们可以用checkout的方式从远程中读取
+
+Git checkout -- readme.txt
+
+-- 从远程上面获取git库的内容
+git remote add origin git@github.com:LianLuo/learngit.git
