@@ -72,3 +72,12 @@ git clone git@github.com:LianLuo/learngit.git
 -- 要克隆一个仓库，首先必须知道仓库地址，然后使用Git clone 命令克隆
 -- Git 支持多种协议，包括https,但是通过ssh支持原生态git协议速度最快。
 
+-- 创建并切换分支
+git checkout -b dev
+
+-- 也可以用下面的命令表示
+git branch dev
+git checkout dev
+
+-- 用git branch 查看当前有多少分支
+git branch
