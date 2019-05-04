@@ -81,3 +81,12 @@ git checkout dev
 
 -- 用git branch 查看当前有多少分支
 git branch
+
+-- 在dev上面添加git_notebook.txt 并且 提交到dev本地分支
+git add git_notebook.txt
+git commit -m 'branch test'
+
+git checkout master -- 切换到master分支
+git merge dev -- 将dev分支合并到当前‘master’分支中。
+git branch -d dev -- 删除dev分支
+git branch -- 查看分支状态。
