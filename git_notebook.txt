@@ -56,3 +56,12 @@ Git checkout -- readme.txt
 
 -- 从远程上面获取git库的内容
 git remote add origin git@github.com:LianLuo/learngit.git
+--git@github.com:LianLuo/learngit.git
+
+git push -u origin master
+
+-- 把本地库中的内容推送到远程，用git push命令，实际上就是把当前分支master推送到远程。
+-- 由于远程库是空的，我们第一次推送master分支时，加上 -u 参数，Git不但会把本地的master分支内容推送到远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
+
+-- 在使用git remote add origin git@github.com:LianLuo/learngit.git的时候可能会发生错误，fatal: Not a git repository (or any of the parent directories): .git
+-- 出现这样的错误，你需要在你所在的目录进行 git init操作，初始化一下Git文件，就可以做上面的操作了。
