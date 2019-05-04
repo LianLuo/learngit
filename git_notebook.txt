@@ -115,3 +115,6 @@ git stash list
 git stash apply -- 恢复缓存内容，不删除缓存内容;使用git stash drop来进行删除
 git stash pop -- 恢复缓存内容，并删除缓存内容。
 -- 可可以缓存多次，用git stash list 查看，然后指定恢复某一次缓存 git stash apply stash@{0}
+
+-- 如果需要强制删除某个分支 需要用到-D
+git branch -D <branchName>
