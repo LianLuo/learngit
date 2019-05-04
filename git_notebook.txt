@@ -54,7 +54,7 @@ git commit -m 'remove readme.txt'
 
 Git checkout -- readme.txt
 
--- 从远程上面获取git库的内容
+-- 从远程上面获取git库的内容 这个只是获取，并没有初始化，需要我们初始化后，同步到远程上面去
 git remote add origin git@github.com:LianLuo/learngit.git
 --git@github.com:LianLuo/learngit.git
 
@@ -65,3 +65,10 @@ git push -u origin master
 
 -- 在使用git remote add origin git@github.com:LianLuo/learngit.git的时候可能会发生错误，fatal: Not a git repository (or any of the parent directories): .git
 -- 出现这样的错误，你需要在你所在的目录进行 git init操作，初始化一下Git文件，就可以做上面的操作了。
+
+
+-- 从远程库中克隆一个到本地
+git clone git@github.com:LianLuo/learngit.git
+-- 要克隆一个仓库，首先必须知道仓库地址，然后使用Git clone 命令克隆
+-- Git 支持多种协议，包括https,但是通过ssh支持原生态git协议速度最快。
+
