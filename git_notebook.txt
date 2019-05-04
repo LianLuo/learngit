@@ -90,3 +90,28 @@ git checkout master -- 切换到master分支
 git merge dev -- 将dev分支合并到当前‘master’分支中。
 git branch -d dev -- 删除dev分支
 git branch -- 查看分支状态。
+
+-- 总结
+git branch -- 查看分支
+git branch <name> -- 创建分支
+git checkout <name> -- 切换分支
+git checkout -b <name> -- 创建+切换分支
+git merge <name> -- 合并某分支到当前分支
+git merge --no-ff -m 'merge with no-ff' <name> -- 使用no-ff 合并分支，并添加合并信息。
+git branch -b <name> -- 删除分支
+git log --graph --pretty=online --abbrev-commit -- 查看分支合并情况
+
+-- BUG分支，当前在DEV上面正开发，突然需要紧急修复BUG，但是代码没有提交，做了一半
+git stash
+git checkout master
+git checkout -b issue-101
+git add readme.txt
+git commit -m 'fixed bug 101'
+git checkout master
+git merge --no-ff -m 'merged bug fix 101' issue-101
+git branch -b issue-101\
+git checkout dev
+git stash list
+git stash apply -- 恢复缓存内容，不删除缓存内容;使用git stash drop来进行删除
+git stash pop -- 恢复缓存内容，并删除缓存内容。
+-- 可可以缓存多次，用git stash list 查看，然后指定恢复某一次缓存 git stash apply stash@{0}
