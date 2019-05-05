@@ -118,3 +118,29 @@ git stash pop -- 恢复缓存内容，并删除缓存内容。
 
 -- 如果需要强制删除某个分支 需要用到-D
 git branch -D <branchName>
+
+-- 打标签
+git tag v1.0
+
+git tag -- 查看tag信息
+
+git tag v0.9 17036e6 -- 将指定的commit作为一个tag
+
+-- 还可以创建带说明的标签，用-a指定标签名，-m指定说明文字
+git tag -a v0.1 -m "version 0.1 released" 1094abd
+--用git show <tagName> 可以看到说明文字
+git show v0.1
+
+-- 如果标签打错了可以删除标签
+git tag -d v0.1
+
+-- 因为创建的标签都是存储到本地的，不会自动推送到远程，所以，打错的标签可以在本地安全删除。
+-- 如果需要推送某个标签到远程，使用命令 git push origin <tagname>
+git push origin v1.0
+-- 或者一次性推送全部尚未推送到远程的本地标签
+
+git push origin --tags
+
+-- 如果标签已经推送到远程了，要删除标签可能麻烦一点，先从本地删除标签
+git tag -d v1.0
+git push origin :refs/tags/v1.0
