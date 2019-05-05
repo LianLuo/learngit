@@ -144,3 +144,29 @@ git push origin --tags
 -- 如果标签已经推送到远程了，要删除标签可能麻烦一点，先从本地删除标签
 git tag -d v1.0
 git push origin :refs/tags/v1.0
+
+-- 忽略特殊文件
+-- 我们需要自己定义 *.gitignore 文件去处理我们需要忽略的文件
+###
+# windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Python
+
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+dist -- 目录
+build -- 目录
+###
+
+-- 如果某个文件在忽略范围内，但是我们又想提交到git中，我们就可以用-f的方式提交
+
+git add -f hello.py
+
+-- 我们还可以检查 *.gitignore 是否写的有问题
+
+git check-ignore -v hello.py
