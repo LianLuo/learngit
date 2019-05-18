@@ -1,0 +1,9 @@
+# learn DotNet.Core
+# common command
+dotnet new -- create a simple .Net project.
+dotnet restore -- restore reference for .net project.
+dotnet build -- build a .net project
+dotnet publish -- ready to publish a project of .net.
+dotnet run -- build and run a project of .net.
+dotnet test -- run unit test.
+dotnet pack -- create a NuGet pakage.
